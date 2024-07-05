@@ -1,0 +1,38 @@
+<html>    
+  <head> 
+    <script type="text/javascript" src="jquery/jquery-1.4.4.min.js"></script>        
+    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    <script type="text/javascript" src="js/gmap3.js"></script> 
+    <style>
+	body {
+	margin:0px;
+	}
+      .gmap3{
+        margin: 0px;
+        border: 1px dashed #C0C0C0;
+        width: 665px;
+        height: 370px;
+      }
+    </style>
+    
+    <script type="text/javascript">
+      $(function(){
+        $().gmap3('setDefault', {verbose:true});
+      
+        $('#test1').gmap3(
+          //{action:'setDefault', verbose:true}, // also possible
+          { action: 'addMarker',
+            address: "130 West Route 66 Suite 214 Glendora, CA 91740",
+            map:{
+              center: true,
+              zoom: 14,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+          }
+          );
+      });
+    </script>
+  <body>
+    <div id="test1" class="gmap3"></div>
+  </body>
+</html>
